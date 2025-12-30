@@ -3,39 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend Test</title>
+  <title>ResecOps | Secure. Reliable. Scalable.</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, sans-serif;
     }
 
     body {
-      background: #f4f6f8;
+      background: #f5f7fa;
       color: #333;
     }
 
-    /* ---------- NAVBAR ---------- */
+    /* NAVBAR */
     nav {
-      background: #1e3c72;
-      padding: 15px 40px;
+      background: #0f172a;
+      color: white;
+      padding: 18px 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
     }
 
     nav h2 {
       font-size: 22px;
+      font-weight: 600;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
 
     nav ul li a {
@@ -45,62 +46,78 @@
     }
 
     nav ul li a:hover {
-      text-decoration: underline;
+      color: #38bdf8;
     }
 
-    /* ---------- HERO SECTION ---------- */
+    /* HERO SECTION */
     .hero {
-      height: 80vh;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
+      height: 85vh;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      color: white;
       padding: 20px;
+      color: white;
     }
 
     .hero-content {
-      max-width: 600px;
+      max-width: 700px;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
+      font-size: 46px;
+      margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      line-height: 1.6;
+      opacity: 0.9;
     }
 
     .hero a {
-      padding: 14px 32px;
-      background: #ff9800;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
+      padding: 14px 34px;
+      background: #38bdf8;
+      color: #0f172a;
       font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
     .hero a:hover {
-      background: #e68900;
+      background: #0ea5e9;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* ABOUT SECTION */
+    .about {
+      padding: 70px 50px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* FOOTER */
     footer {
-      background: #1e3c72;
-      color: white;
+      background: #0f172a;
+      color: #cbd5e1;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
       font-size: 14px;
-      opacity: 0.8;
     }
   </style>
 </head>
@@ -108,7 +125,7 @@
 
   <!-- NAVBAR -->
   <nav>
-    <h2>Frontend Test</h2>
+    <h2>ResecOps</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="login.html">Login</a></li>
@@ -118,15 +135,29 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Build. Learn. Deploy.</h1>
-      <p>A simple frontend landing page hosted on GitHub Pages.</p>
+      <h1>Secure. Reliable. Scalable.</h1>
+      <p>
+        ResecOps delivers modern DevSecOps solutions that help teams
+        build, deploy, and scale applications with confidence.
+      </p>
       <a href="login.html">Get Started</a>
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <h2>About ResecOps</h2>
+    <p>
+      ResecOps focuses on secure application delivery, automation, and
+      infrastructure reliability. We help teams integrate security into
+      development workflows, ensuring fast deployments without
+      compromising safety or performance.
+    </p>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Kalyan | Built with ❤️ using HTML & CSS</p>
+    <p>© 2025 ResecOps. All rights reserved.</p>
   </footer>
 
 </body>
