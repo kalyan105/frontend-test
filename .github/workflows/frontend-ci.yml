@@ -2,18 +2,21 @@ name: Frontend CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
 
 jobs:
-  frontend-check:
+  validate-frontend:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Validate HTML files
+      - name: Install HTML validator
+        run: sudo apt-get update && sudo apt-get install -y tidy
+
+      - name: Validate all HTML files
         run: |
-          sudo apt install tidy
-          tidy -e index.html
+          echo "Validating HTML files..."
+          find . -name "*.html" -print -exec tidy -e {} \;
