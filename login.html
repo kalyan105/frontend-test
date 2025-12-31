@@ -2,161 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>RedSecOps | Secure Login</title>
+  <title>Login | ResecOps</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: "Segoe UI", Tahoma, sans-serif;
     }
 
     body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #0f172a, #020617);
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #0f172a;
+      color: white;
+      padding: 18px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* LOGIN SECTION */
+    .login-section {
+      min-height: calc(100vh - 80px);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #e5e7eb;
+      padding: 40px 20px;
     }
 
-    /* Background glow */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(225, 6, 0, 0.15), transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.15), transparent 40%);
-      z-index: 0;
+    .login-card {
+      background: white;
+      width: 100%;
+      max-width: 420px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
-    .login-wrapper {
-      position: relative;
-      z-index: 1;
-      width: 380px;
-      padding: 40px 35px;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(14px);
-      border-radius: 16px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .brand {
+    .login-card h1 {
       text-align: center;
-      margin-bottom: 28px;
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #0f172a;
     }
 
-    .brand h1 {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #e10600;
-    }
-
-    .brand p {
-      margin-top: 6px;
-      font-size: 13px;
-      color: #9ca3af;
+    .login-card p {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 30px;
     }
 
     label {
-      font-size: 13px;
-      color: #cbd5e1;
-      display: block;
+      font-size: 14px;
+      font-weight: 500;
       margin-bottom: 6px;
+      display: block;
     }
 
     input {
       width: 100%;
-      padding: 12px 14px;
+      padding: 12px;
       margin-bottom: 18px;
-      background: #020617;
-      border: 1px solid #1e293b;
-      border-radius: 8px;
-      color: #f9fafb;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
       font-size: 14px;
-      transition: all 0.2s ease;
-    }
-
-    input::placeholder {
-      color: #64748b;
     }
 
     input:focus {
       outline: none;
-      border-color: #e10600;
-      box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.25);
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
     }
 
     button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(135deg, #e10600, #b00000);
+      background: #2563eb;
       border: none;
-      border-radius: 8px;
+      color: white;
       font-size: 15px;
       font-weight: 600;
-      color: white;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background 0.2s;
     }
 
     button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 25px rgba(225, 6, 0, 0.45);
+      background: #1d4ed8;
     }
 
     #error {
-      margin-top: 14px;
+      margin-top: 12px;
+      text-align: center;
+      color: #dc2626;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 15px;
       font-size: 13px;
-      color: #f87171;
-      text-align: center;
-    }
-
-    .footer {
-      margin-top: 22px;
-      text-align: center;
-      font-size: 12px;
-      color: #94a3b8;
-    }
-
-    .footer span {
-      color: #e10600;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="login-wrapper">
-    <div class="brand">
-      <h1>RedSecOps</h1>
-      <p>Secure Access Portal</p>
+  <!-- NAVBAR -->
+  <nav>
+    <h2>ResecOps</h2>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <!-- LOGIN -->
+  <section class="login-section">
+    <div class="login-card">
+      <h1>Welcome Back</h1>
+      <p>Sign in to access your dashboard</p>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="admin@resecops.com" required />
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••" required />
+
+        <button type="submit">Sign In</button>
+      </form>
+
+      <p id="error"></p>
     </div>
+  </section>
 
-    <form id="loginForm">
-      <label>Email</label>
-      <input type="email" id="email" placeholder="admin@redsecops.com" required />
-
-      <label>Password</label>
-      <input type="password" id="password" placeholder="••••••••" required />
-
-      <button type="submit">Sign In</button>
-    </form>
-
-    <p id="error"></p>
-
-    <div class="footer">
-      © 2025 <span>RedSecOps</span>. All rights reserved.
-    </div>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 ResecOps. All rights reserved.
+  </footer>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", async (e) => {
@@ -179,11 +183,11 @@
           window.location.href = "dashboard.html";
         } else {
           document.getElementById("error").innerText =
-            data.message || "Invalid credentials";
+            data.message || "Invalid login credentials";
         }
-      } catch (err) {
+      } catch (error) {
         document.getElementById("error").innerText =
-          "Unable to reach authentication server";
+          "Unable to connect to server";
       }
     });
   </script>
