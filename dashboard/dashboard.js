@@ -55,7 +55,7 @@ function editEmployee(id) {
 
 function logout() {
   localStorage.removeItem("token");
-  window.location.href = "login.html";
+  window.location.href = "/my-project/login.html";
 }
 
 renderEmployees();

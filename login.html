@@ -180,7 +180,7 @@
 
         if (response.ok) {
           localStorage.setItem("token", data.token);
-          window.location.href = "dashboard/";
+          window.location.href = "dashboard/dashboard.html";
         } else {
           document.getElementById("error").innerText =
             data.message || "Invalid login credentials";
