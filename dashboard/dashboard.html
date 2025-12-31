@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ResecOps | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2>ResecOps</h2>
+
+  <nav>
+    <a class="active">Dashboard</a>
+    <a>Employees</a>
+    <a>Settings</a>
+    <a onclick="logout()">Logout</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  
+  <!-- HEADER -->
+  <header class="topbar">
+    <h1>Dashboard</h1>
+    <button class="primary-btn" onclick="openAddModal()">+ Add Employee</button>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="card">
+      <h3>Total Employees</h3>
+      <p id="totalEmployees">10</p>
+    </div>
+    <div class="card">
+      <h3>Departments</h3>
+      <p>6</p>
+    </div>
+    <div class="card">
+      <h3>Active Users</h3>
+      <p>9</p>
+    </div>
+  </section>
+
+  <!-- EMPLOYEE TABLE -->
+  <section class="table-section">
+    <h2>Employees</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Profile</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="employeeTable">
+        <!-- JS inserts rows -->
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<!-- ADD / EDIT MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <h3 id="modalTitle">Add Employee</h3>
+
+    <input id="name" placeholder="Full Name" />
+    <input id="role" placeholder="Role" />
+    <input id="email" placeholder="Email" />
+    <input id="department" placeholder="Department" />
+    <input type="file" id="avatar" />
+
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-primary" onclick="saveEmployee()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
